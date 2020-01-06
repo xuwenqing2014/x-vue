@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <p>{{test}}</p>
+        <p x-text="test"></p>
+        <p x-html="test"></p>
+        <p>
+            <input type="text" x-model="test">
+        </p>
+    </div>
+    <script src="./xvue.js"></script>
+    <script src="./compile.js"></script>
+    <script>
+        const x = new XVue({
+            el: '#app',
+            data: {
+                test: 'aaa',
+                obj: {
+                    value: 'aaaa'
+                }
+            }
+        });
+        console.log(x.test);
+        x.test = 'bbbb';
+        console.log(x.test);
+    </script>
+</body>
+
+</html>
